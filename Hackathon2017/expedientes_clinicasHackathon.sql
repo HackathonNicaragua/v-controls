@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 25-11-2017 a las 18:34:08
+-- Tiempo de generación: 25-11-2017 a las 21:55:10
 -- Versión del servidor: 10.1.25-MariaDB
 -- Versión de PHP: 7.1.7
 
@@ -145,6 +145,13 @@ CREATE TABLE `consulta` (
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Volcado de datos para la tabla `consulta`
+--
+
+INSERT INTO `consulta` (`Id_Consulta`, `Motivo_Consulta`, `Historia_Enfermedad_Actual`, `Interrogatorio`, `Numero_Consulta`, `Fecha`, `Sala`, `Numero_Cama`, `Fuente_Informacion`, `Confiabilidad`, `Numero_Expediente`, `Servicio`, `Hora`, `created_at`, `updated_at`) VALUES
+(1, 'Gripe', 'Inexistente', 'No hay', 1, '2017-11-01', 1, 1, 'Mama', 'repo', 1, 'Web', '12:00', '2017-11-25 19:30:07', '0000-00-00 00:00:00');
+
 -- --------------------------------------------------------
 
 --
@@ -155,8 +162,8 @@ CREATE TABLE `datos_personales` (
   `Numero_Expediente` int(10) NOT NULL,
   `Nombres` varchar(25) NOT NULL,
   `Apellidos` varchar(25) NOT NULL,
-  `Numero_Cedula` varchar(15) NOT NULL,
-  `Numero_INSS` int(10) NOT NULL,
+  `numerocedula` varchar(15) NOT NULL,
+  `numeroinss` int(10) NOT NULL,
   `Edad` int(5) NOT NULL,
   `Lugar_Nacimiento` varchar(30) NOT NULL,
   `Religion` varchar(15) NOT NULL,
@@ -164,7 +171,7 @@ CREATE TABLE `datos_personales` (
   `Escolaridad` varchar(15) NOT NULL,
   `Sexo` varchar(10) NOT NULL,
   `Profesion` varchar(15) NOT NULL,
-  `Direccion Habitual` varchar(40) NOT NULL,
+  `Direccion_Habitual` varchar(40) NOT NULL,
   `Nombre_Padre` varchar(30) NOT NULL,
   `Nombre_Madre` varchar(30) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
@@ -172,13 +179,32 @@ CREATE TABLE `datos_personales` (
   `Id_Usuario` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Volcado de datos para la tabla `datos_personales`
+--
+
+INSERT INTO `datos_personales` (`Numero_Expediente`, `Nombres`, `Apellidos`, `numerocedula`, `numeroinss`, `Edad`, `Lugar_Nacimiento`, `Religion`, `Etnias`, `Escolaridad`, `Sexo`, `Profesion`, `Direccion_Habitual`, `Nombre_Padre`, `Nombre_Madre`, `created_at`, `updated_at`, `Id_Usuario`) VALUES
+(1, 'Landy Orlando', 'Cuadra Medina', '28108049', 12345, 20, 'Leon', 'Ateo', 'Mestizo', 'Universitario', 'Masculino', 'Ingeniero', 'Leon', 'Orlando', 'MamadeLandy', '2017-11-25 19:04:25', '2017-11-25 19:04:25', 0);
+
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `examen_fisico`
+-- Estructura de tabla para la tabla `doctores_pacientes`
 --
 
-CREATE TABLE `examen_fisico` (
+CREATE TABLE `doctores_pacientes` (
+  `Id_Doc_Pac` int(15) NOT NULL,
+  `Id_Usuario` int(10) NOT NULL,
+  `Numero_Expediente` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `examen_fisicos`
+--
+
+CREATE TABLE `examen_fisicos` (
   `FC` varchar(10) NOT NULL,
   `FR` varchar(10) NOT NULL,
   `TA` varchar(10) NOT NULL,
@@ -188,13 +214,20 @@ CREATE TABLE `examen_fisico` (
   `Area_Superficoie_Corporal` varchar(15) NOT NULL,
   `IMC` int(15) NOT NULL,
   `Numero_Expediente` int(10) NOT NULL,
-  `Codigo_E.Fisico` int(15) NOT NULL,
+  `Codigo_E_Fisico` int(15) NOT NULL,
   `Aspecto_General` varchar(40) NOT NULL,
   `Piel_Mucosa` varchar(40) NOT NULL,
   `Id_Consulta` int(10) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `examen_fisicos`
+--
+
+INSERT INTO `examen_fisicos` (`FC`, `FR`, `TA`, `TEMP`, `Peso`, `Talla`, `Area_Superficoie_Corporal`, `IMC`, `Numero_Expediente`, `Codigo_E_Fisico`, `Aspecto_General`, `Piel_Mucosa`, `Id_Consulta`, `created_at`, `updated_at`) VALUES
+('45', '345', '456', '789', '1278', '123', '124', 456, 1, 1, 'Noral', 'lkj', 1, '2017-11-25 20:12:15', '2017-11-25 20:12:15');
 
 -- --------------------------------------------------------
 
@@ -357,6 +390,13 @@ CREATE TABLE `usuarios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`Id_Usuario`, `Nombre_Usuario`, `Contraseña`, `Niveles`) VALUES
+(1, 'Dania ', '1234', 'Doctor');
+
+--
 -- Índices para tablas volcadas
 --
 
@@ -401,13 +441,21 @@ ALTER TABLE `consulta`
 --
 ALTER TABLE `datos_personales`
   ADD PRIMARY KEY (`Numero_Expediente`),
-  ADD KEY `Id_Usuario` (`Id_Usuario`);
+  ADD KEY `datos_personales_ibfk_1` (`Id_Usuario`);
 
 --
--- Indices de la tabla `examen_fisico`
+-- Indices de la tabla `doctores_pacientes`
 --
-ALTER TABLE `examen_fisico`
-  ADD PRIMARY KEY (`Codigo_E.Fisico`),
+ALTER TABLE `doctores_pacientes`
+  ADD PRIMARY KEY (`Id_Doc_Pac`),
+  ADD KEY `Id_Usuario` (`Id_Usuario`),
+  ADD KEY `Numero_Expediente` (`Numero_Expediente`);
+
+--
+-- Indices de la tabla `examen_fisicos`
+--
+ALTER TABLE `examen_fisicos`
+  ADD PRIMARY KEY (`Codigo_E_Fisico`),
   ADD KEY `Numero_Expediente` (`Numero_Expediente`),
   ADD KEY `Id_Consulta` (`Id_Consulta`);
 
@@ -507,12 +555,12 @@ ALTER TABLE `antecedentes_personales_patologicos`
 -- AUTO_INCREMENT de la tabla `datos_personales`
 --
 ALTER TABLE `datos_personales`
-  MODIFY `Numero_Expediente` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `Numero_Expediente` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
--- AUTO_INCREMENT de la tabla `examen_fisico`
+-- AUTO_INCREMENT de la tabla `examen_fisicos`
 --
-ALTER TABLE `examen_fisico`
-  MODIFY `Codigo_E.Fisico` int(15) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `examen_fisicos`
+  MODIFY `Codigo_E_Fisico` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT de la tabla `fisico_cabeza_cuello`
 --
@@ -589,50 +637,51 @@ ALTER TABLE `consulta`
   ADD CONSTRAINT `consulta_ibfk_1` FOREIGN KEY (`Numero_Expediente`) REFERENCES `datos_personales` (`Numero_Expediente`) ON DELETE CASCADE;
 
 --
--- Filtros para la tabla `datos_personales`
+-- Filtros para la tabla `doctores_pacientes`
 --
-ALTER TABLE `datos_personales`
-  ADD CONSTRAINT `datos_personales_ibfk_1` FOREIGN KEY (`Id_Usuario`) REFERENCES `usuarios` (`Id_Usuario`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `doctores_pacientes`
+  ADD CONSTRAINT `doctores_pacientes_ibfk_1` FOREIGN KEY (`Id_Usuario`) REFERENCES `usuarios` (`Id_Usuario`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `doctores_pacientes_ibfk_2` FOREIGN KEY (`Numero_Expediente`) REFERENCES `datos_personales` (`Numero_Expediente`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Filtros para la tabla `examen_fisico`
+-- Filtros para la tabla `examen_fisicos`
 --
-ALTER TABLE `examen_fisico`
-  ADD CONSTRAINT `examen_fisico_ibfk_1` FOREIGN KEY (`Numero_Expediente`) REFERENCES `datos_personales` (`Numero_Expediente`) ON DELETE CASCADE;
+ALTER TABLE `examen_fisicos`
+  ADD CONSTRAINT `examen_fisicos_ibfk_1` FOREIGN KEY (`Numero_Expediente`) REFERENCES `datos_personales` (`Numero_Expediente`) ON DELETE CASCADE;
 
 --
 -- Filtros para la tabla `fisico_cabeza_cuello`
 --
 ALTER TABLE `fisico_cabeza_cuello`
-  ADD CONSTRAINT `fisico_cabeza_cuello_ibfk_1` FOREIGN KEY (`Codigo_E.Fisico`) REFERENCES `examen_fisico` (`Codigo_E.Fisico`) ON DELETE CASCADE,
+  ADD CONSTRAINT `fisico_cabeza_cuello_ibfk_1` FOREIGN KEY (`Codigo_E.Fisico`) REFERENCES `examen_fisicos` (`Codigo_E_Fisico`) ON DELETE CASCADE,
   ADD CONSTRAINT `fisico_cabeza_cuello_ibfk_2` FOREIGN KEY (`Id_Consulta`) REFERENCES `consulta` (`Id_Consulta`) ON DELETE CASCADE;
 
 --
 -- Filtros para la tabla `fisico_genitourinario`
 --
 ALTER TABLE `fisico_genitourinario`
-  ADD CONSTRAINT `fisico_genitourinario_ibfk_1` FOREIGN KEY (`Codig_E.Fisico`) REFERENCES `examen_fisico` (`Codigo_E.Fisico`) ON DELETE CASCADE,
+  ADD CONSTRAINT `fisico_genitourinario_ibfk_1` FOREIGN KEY (`Codig_E.Fisico`) REFERENCES `examen_fisicos` (`Codigo_E_Fisico`) ON DELETE CASCADE,
   ADD CONSTRAINT `fisico_genitourinario_ibfk_2` FOREIGN KEY (`Id_Consulta`) REFERENCES `consulta` (`Id_Consulta`) ON DELETE CASCADE;
 
 --
 -- Filtros para la tabla `fisico_muscuesqueletico`
 --
 ALTER TABLE `fisico_muscuesqueletico`
-  ADD CONSTRAINT `fisico_muscuesqueletico_ibfk_1` FOREIGN KEY (`Codigo_E.Fisico`) REFERENCES `examen_fisico` (`Codigo_E.Fisico`) ON DELETE CASCADE,
+  ADD CONSTRAINT `fisico_muscuesqueletico_ibfk_1` FOREIGN KEY (`Codigo_E.Fisico`) REFERENCES `examen_fisicos` (`Codigo_E_Fisico`) ON DELETE CASCADE,
   ADD CONSTRAINT `fisico_muscuesqueletico_ibfk_2` FOREIGN KEY (`Id_Consulta`) REFERENCES `consulta` (`Id_Consulta`) ON DELETE CASCADE;
 
 --
 -- Filtros para la tabla `fisico_torax`
 --
 ALTER TABLE `fisico_torax`
-  ADD CONSTRAINT `fisico_torax_ibfk_1` FOREIGN KEY (`Codigo_E.Fisico`) REFERENCES `examen_fisico` (`Codigo_E.Fisico`) ON DELETE CASCADE,
+  ADD CONSTRAINT `fisico_torax_ibfk_1` FOREIGN KEY (`Codigo_E.Fisico`) REFERENCES `examen_fisicos` (`Codigo_E_Fisico`) ON DELETE CASCADE,
   ADD CONSTRAINT `fisico_torax_ibfk_2` FOREIGN KEY (`Id_Consulta`) REFERENCES `consulta` (`Id_Consulta`) ON DELETE CASCADE;
 
 --
 -- Filtros para la tabla `fsico_abdomen_pelvis`
 --
 ALTER TABLE `fsico_abdomen_pelvis`
-  ADD CONSTRAINT `fsico_abdomen_pelvis_ibfk_1` FOREIGN KEY (`Codigo_E.Fisico`) REFERENCES `examen_fisico` (`Codigo_E.Fisico`) ON DELETE CASCADE,
+  ADD CONSTRAINT `fsico_abdomen_pelvis_ibfk_1` FOREIGN KEY (`Codigo_E.Fisico`) REFERENCES `examen_fisicos` (`Codigo_E_Fisico`) ON DELETE CASCADE,
   ADD CONSTRAINT `fsico_abdomen_pelvis_ibfk_2` FOREIGN KEY (`Id_Consulta`) REFERENCES `consulta` (`Id_Consulta`) ON DELETE CASCADE;
 
 --
