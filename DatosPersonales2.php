@@ -12,21 +12,21 @@
  	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
  	<script type="text/javascript" src="js/controldediseño.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
- 	<title>Datos personales</title>
+ 	<title>Datos personales2</title>
  </head>
  <body>
 	 <center>
 
 	 	<div>
 	 		<ul class="nav nav-tabs nav-justified">
-			  <li role="presentation" class="active"><a href="#">Datos Personales</a></li>
-			  <li role="presentation"><a href="DatosPersonales2.php">Consulta</a></li>
+			  <li role="presentation" class="active"><a href="DatosPersonales.php">Datos Personales</a></li>
+			  <li role="presentation"><a href="#">Consulta</a></li>
 			  <li role="presentation"><a href="#">Examen Fisico</a></li>
 			</ul>
 			<ul class="nav nav-pills nav-justified">
 				<li role="presentation"><a href="DatosPersonales.php">DatosPersonales</a></li>
 				<li role="presentation" class="active"><a href="DatosPersonales2.php">DatosPersonales2</a></li>
-				<li role="presentation"><a href="#">DatosPersonales3</a></li>
+				<li role="presentation"><a href="DatosPersonales3.php">DatosPersonales3</a></li>
 			</ul>
 	 	</div>
 	 	<form name="datosper" method="post" action="">
@@ -42,7 +42,7 @@
 
 		 		<div>
 		 			<label for="etnia">Etnia</label>
-		 			<select name="etnia" class="form-control" onChange="aparecertb()">
+		 			<select name="etnia" class="form-control" onchange="aparecertb(this)">
 		 				<option value="Mestizos">Mestizos</option>
 		 				<option value="Miskitu">Miskitu</option>
 		 				<option value="Matagalpa">Matagalpa</option>
@@ -58,7 +58,7 @@
 		 			</select>
 		 		</div>
 
-		 		<div name="otrosd">
+		 		<div name="otrosd" style="display: none;">
 		 			<input type="text" placeholder="Etnia" class="form-control">
 		 		</div>
 
@@ -90,7 +90,7 @@
 				<nav aria-label="...">
   					<ul class="pager">
     					<li class="previous"><a href="DatosPersonales.php"><span aria-hidden="true">&larr;</span> Anterior</a></li>
-    					<li class="next"><a href="#">Siguiente <span aria-hidden="true">&rarr;</span></a></li>
+    					<li class="next"><a href="DatosPersonales3.php">Siguiente <span aria-hidden="true">&rarr;</span></a></li>
   					</ul>
 				</nav>
 			</div>

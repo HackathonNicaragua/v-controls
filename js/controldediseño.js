@@ -1,11 +1,13 @@
 
-function aparecertb () {
-	if (document.getElementsByName("etnia").value == "Otros")
+function aparecertb (sel) {
+	if (sel.value == "Otros")
 	{
-		document.getElementsByName("otrosd").style.display = "";
+		var tb = document.getElementsByName("otrosd");
+		tb.style.display = '';
 	}
 	else
 	{
-		document.getElementsByName("otrosd").style.display = "none";
+		var tb = document.getElementsByName("otrosd");
+		tb.style.display = "none";
 	}
 }
