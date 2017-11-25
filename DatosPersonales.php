@@ -16,6 +16,19 @@
  </head>
  <body>
 	 <center>
+
+	 	<div>
+	 		<ul class="nav nav-tabs nav-justified">
+			  <li role="presentation" class="active"><a href="#">Datos Personales</a></li>
+			  <li role="presentation"><a href="DatosPersonales2.php">Consulta</a></li>
+			  <li role="presentation"><a href="#">Examen Fisico</a></li>
+			</ul>
+			<ul class="nav nav-pills nav-justified">
+				<li role="presentation" class="active"><a href="DatosPersonales.php">DatosPersonales</a></li>
+				<li role="presentation"><a href="DatosPersonales2.php">DatosPersonales2</a></li>
+				<li role="presentation"><a href="#">DatosPersonales3</a></li>
+			</ul>
+	 	</div>
 	 	<form name="datosper" method="post" action="">
 	 		<div class="input-group"> 			
 	 		
@@ -49,40 +62,12 @@
 		 			<input type="text" name="inss" placeholder="ej: 1501002" class="form-control">
 		 		</div>
 
-		 		<div>
-		 			<label for="sexo">Sexo</label>
-					<select name="sexo" class="form-control">
-						<option value="Masculino">Masculino</option>}
-						<option value="Femenino">Femenino</option>}
-					</select>	
-		 		</div>
-
-		 		<div>
-		 			<label for="etnia">Etnia</label>
-		 			<select name="etnia" class="form-control" onChange="aparecertb()">
-		 				<option value="Mestizos">Mestizos</option>
-		 				<option value="Miskitu">Miskitu</option>
-		 				<option value="Matagalpa">Matagalpa</option>
-		 				<option value="Creole">Creole</option>
-		 				<option value="Subtiava">Subtiava</option>
-		 				<option value="Nahua">Nahua</option>
-		 				<option value="Chorotega">Chorotega</option>
-		 				<option value="Mayangna">Mayangna</option>
-		 				<option value="Nicarao">Nicarao</option>
-		 				<option value="Garifuna">Garifuna</option>
-		 				<option value="Rama">Rama</option>
-		 				<option value="Otros" >Otros</option>
-		 			</select>
-		 		</div>
-
-		 		<div name="otrosd">
-		 			<input type="text" placeholder="Etnia" class="form-control">
-		 		</div>
-
-				<div>
-					<label for="nacimiento">Fecha de Nacimiento</label>
-					<input type="date" name="nacimiento" class="form-control">
-				</div>
+				<nav aria-label="...">
+  					<ul class="pager">
+    					<li class="previous disabled"><a href="#"><span aria-hidden="true">&larr;</span> Anterior</a></li>
+    					<li class="next"><a href="DatosPersonales2.php">Siguiente <span aria-hidden="true">&rarr;</span></a></li>
+  					</ul>
+				</nav>
 			</div>
 	 	</form>
 	</center>
