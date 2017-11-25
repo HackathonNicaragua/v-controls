@@ -72,7 +72,7 @@ foreach($resul as $Expediente)
     $pacientes="</a>";
 }
 $pacientes="<div/><div/>";
-print_r ($pacientes);
+print_r ("<h1>T.T</h1>");
 ?>
 </div>
 </body>
