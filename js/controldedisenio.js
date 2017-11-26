@@ -1,6 +1,7 @@
 
-function aparecertb (sel) {
-	/*if (sel.value == "Otros")
+function aparecertb () {
+	var et = document.getElementsById('etnia');
+	if (et.value == "Otros")
 	{
 		var tb = document.getElementsById("otrosd");
 		tb.style.display = " ";
@@ -9,6 +10,5 @@ function aparecertb (sel) {
 	{
 		var tb = document.getElementsById("otrosd");
 		tb.style.display = "none";
-	}*/
-	alert("hola que tal");
+	}
 }
