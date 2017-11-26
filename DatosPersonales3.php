@@ -27,7 +27,13 @@
 				<li role="presentation" class="active"><a href="DatosPersonales3.php">DatosPersonales3</a></li>
 			</ul>
 	 	</div>
+<?php 
+setcookie('sexo',$_POST['sexo'],time()+60000000);
+setcookie('etnia',$_POST['etnia'],time()+60000000);
+setcookie('nacimiento',$_POST['nacimiento'],time()+60000000);
+setcookie('religion',$_POST['religion'],time()+60000000);
 
+ ?>
 		 	<form name="datosper" method="post" action="">
 		 		<div class="input-group"> 			
 		 		
