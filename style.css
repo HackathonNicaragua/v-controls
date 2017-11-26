@@ -1,6 +1,12 @@
 body{
-	background-color: skyblue;
+	background: radial-gradient(white,skyblue);
+}
+#login{
+	background: radial-gradient(white,darkblue);
 }
 #formulogin{
 	margin-top: 5%;
+}
+#navs{
+	background-color: white;
 }

@@ -10,16 +10,16 @@
 	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 </head>
-<body>
+<body id="login">
 
-	<div class="container" id="formulogin">
+	<div class="container" id="formulogin" >
 
 		<center>
-            <h2 class="lable label-default">Medical technology</h2>
-			<img class="media-object" src="img/prueba.jpg" alt="">
-			
+			<img class="media-object" src="img/logo.png" alt="" height="200px">
+			<br/>
+			<br/>
 		<div class="input-group">
-			<form action="login" method="post" accept-charset="utf-8">
+			<form action="fun_login.php" method="post" accept-charset="utf-8">
 				
 			<input type="text" name="usuario" value="" placeholder="Usuario" class="form-control">
 			<br/>
