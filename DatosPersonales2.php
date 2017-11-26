@@ -13,6 +13,10 @@
  	<title>Datos personales2</title>
  </head>
  <body>
+ 	<?php 
+ 		$n_exp = $_POST['n_expe'];
+ 		setcookie('n_exp',$n_exp,time()+22220);
+ 	 ?>
 	 <center>
 
 	 	<div id="navs">
@@ -28,66 +32,15 @@
 			</ul>
 	 	</div>
 	 	
-	 	<form name="datosper" method="post" action="">
+	 	<form name="datosper" method="post" action="insertar.php">
 	 		<div class="input-group"> 			
 	 	
-	 	 		<div>
-		 			<label for="sexo">Sexo</label>
-					<select name="sexo" class="form-control">
-						<option value="Masculino">Masculino</option>}
-						<option value="Femenino">Femenino</option>}
-					</select>	
-		 		</div>
-		 		
-		 			<label for="etnia">Etnia</label>
-		 			<select id="etnia" class="form-control" onchange ="aparecertb()">
-		 				<option value="Mestizos">Mestizos</option>
-		 				<option value="Miskitu">Miskitu</option>
-		 				<option value="Matagalpa">Matagalpa</option>
-		 				<option value="Creole">Creole</option>
-		 				<option value="Subtiava">Subtiava</option>
-		 				<option value="Nahua">Nahua</option>
-		 				<option value="Chorotega">Chorotega</option>
-		 				<option value="Mayangna">Mayangna</option>
-		 				<option value="Nicarao">Nicarao</option>
-		 				<option value="Garifuna">Garifuna</option>
-		 				<option value="Rama">Rama</option>
-		 				<option value="Otros">Otros</option>
-		 			</select>
-
-		 		<div id="otrosd" style="display:none;">
-		 			<input type="text" placeholder="Etnia" class="form-control">
-		 		</div>
-
-				<div>
-					<label for="nacimiento">Lugar de Nacimiento</label>
-					<input type="text" name="nacimiento" class="form-control">
-				</div>
-
-				<div>
-		 			<label for="religion">Religion</label>
-		 			<input type="text" name="religion" placeholder="Catolico" class="form-control">
-		 		</div>
-
-				<div>
-		 			<label for="escol">Escolaridad</label>
-					<select name="escol" class="form-control">
-						<option value="Ninguno">Ninguno</option>
-						<option value="Primaria">Primaria</option>}
-						<option value="Secundaria">Secundaria</option>}
-						<option value="Superior">Superior</option>
-					</select>	
-		 		</div>
-				
-				<div>
-		 			<label for="profesion">Profesion</label>
-		 			<input type="text" name="profesion" placeholder="Obreoro" class="form-control">
-		 		</div>
+	 	 		
 
 				<nav aria-label="..." class="botones">
   					<ul class="pager">
-    					<li class="previous"><a href="DatosPersonales.php"><span aria-hidden="true">&larr;</span> Anterior</a></li>
-    					<li class="next"><a href="DatosPersonales3.php">Siguiente <span aria-hidden="true">&rarr;</span></a></li>
+    					<li ><a href="DatosPersonales.php"><button type="button" class="btn btn-default">Anterior</button></a></li>
+    					<li ><a><input type="submit" class="btn btn-default" value="Siguiente"></a></li>
   					</ul>
 				</nav>
 			</div>

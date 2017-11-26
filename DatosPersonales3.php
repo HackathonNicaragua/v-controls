@@ -28,29 +28,16 @@
 			</ul>
 	 	</div>
 
-		 	<form name="datosper" method="post" action="">
+		 	<form name="datosper" method="post" action="insertar.php">
 		 		<div class="input-group"> 			
 		 		
-			 		<div>
-			 			<label for="direccion">Direccion</label>
-			 			<input type="text" name="direccion" placeholder="Avenida Rios calle 3" class="form-control">	
-			 		</div>
-
-			 		<div>
-			 			<label for="npadre">Nombre del Padre</label>
-			 			<input type="text" pattern="[A-Za-z]" name="npadre" placeholder="Jose Avendaño" class="form-control">
-			 		</div>
-
-			 		<div>
-			 			<label for="nmadre">Nombre de la madre</label>
-			 			<input type="text" pattern="[A-Za-z]" name="apellidos" placeholder="Isabel Medina" class="form-control">
-			 		</div>
+			 		
 
 
 					<nav aria-label="..." class="botones">
 	  					<ul class="pager">
-	    					<li class="previous"><a href="DatosPersonales2.php"><span aria-hidden="true">&larr;</span> Anterior</a></li>
-	    					<li class="next"><a onclick="">Guardar <span aria-hidden="true">&rarr;</span></a></li>
+	    					<li ><a href="DatosPersonales2.php"><button type="button" class="btn btn-default">Anterior</button></a></li>
+    					<li ><a><input type="submit" class="btn btn-default" value="Siguiente"></a></li>
 	  					</ul>
 					</nav>
 				</div>

@@ -26,9 +26,9 @@
 				<li role="presentation"><a href="DatosPersonales3.php">DatosPersonales3</a></li>
 			</ul>
 	 	</div>
-					
+				
 		
-	 	<form name="datosper" method="post" action="">
+	 	<form name="datosper" method="post" action="DatosPersonales2.php">
 	 		<div class="input-group"> 			
 	 		
 		 		<div>
@@ -63,8 +63,8 @@
 
 				<nav aria-label="..." class="botones">
   					<ul class="pager">
-    					<li class="previous disabled"><a href="#"><span aria-hidden="true">&larr;</span> Anterior</a></li>
-    					<li class="next"><a href="DatosPersonales2.php">Siguiente <span aria-hidden="true">&rarr;</span></a></li>
+    					<li ><a href="#" disabled><button type="button" class="btn btn-default">Anterior</button></a></li>
+    					<li ><a><input type="submit" class="btn btn-default" value="Siguiente"></a></li>
   					</ul>
 				</nav>
 			</div>
