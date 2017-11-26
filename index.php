@@ -10,9 +10,9 @@
 	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 </head>
-<body>
+<body id="login">
 
-	<div class="container" id="formulogin">
+	<div class="container" id="formulogin" >
 
 		<center>
 			<img class="media-object" src="img/prueba.png" alt="" height="200px">
