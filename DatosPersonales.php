@@ -74,5 +74,18 @@
 			</div>
 	 	</form>
 	</center>
+
+	<?php
+		$n_expe='';
+
+		function callWebService()
+		{
+		  //Direccion del servidor donde se tienn los servicios
+		  return json_decode(file_get_contents('http://172.20.8.146/Hackathon2017/Hackathon2017/public/mostrardatospersonales'),true);
+		}	
+
+		$n_expe= $_GET['n_exp'];
+		echo $n_expe;
+		?>
  </body>
  </html>
