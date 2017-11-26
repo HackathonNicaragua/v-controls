@@ -16,7 +16,7 @@
 	$data['Nombre_Padre']=$_POST['npadre'];
 	$resultado=callservice($data);
 	if($resultado){
-		//header('Location: ListaExpedientes.php');
+		header('Location: ListaExpedientes.php');
 	}
 	//'?Id_Usuario='.$_POST['id'].'&Nombre_Usuario='.$_POST['usuario'].'&Contraseña='.$_POST['contra'].'&Niveles='.$_POST['niveles']
 	function callservice($params){
