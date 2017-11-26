@@ -18,7 +18,7 @@
  <body>
 	 <center>
 
-	 	<div >
+	 	<div id="navs">
 	 		<ul class="nav nav-tabs nav-justified">
 			  <li role="presentation" class="active"><a href="DatosPersonales.php">Datos Personales</a></li>
 			  <li role="presentation"><a href="#">Consulta</a></li>

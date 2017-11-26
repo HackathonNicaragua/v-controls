@@ -70,7 +70,7 @@ foreach($resul as $Expediente)
 {
     $cities .= '<input value='.$Expediente['Numero_Expediente'].'></input>'; 
     $cities .= '<input value='.$Expediente['Nombres'].'></input>';   
-    $pacientes.='<a href="" class="list-group-item " >';
+    $pacientes.='<a href="DatosPersonales.php" class="list-group-item " >';
     $pacientes.='<h4 id="paciente1" class="list-group-item-heading">'.$Expediente['Nombres'].' '.$Expediente['Apellidos'].'</h4>';
     $pacientes.='<p class="list-group-item-text">'.$Expediente['Numero_Expediente'].'</p>';
     $pacientes.='</a>';
