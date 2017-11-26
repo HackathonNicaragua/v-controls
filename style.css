@@ -1,4 +1,7 @@
 body{
+	background: radial-gradient(white,skyblue);
+}
+#login{
 	background: radial-gradient(white,darkblue);
 }
 #formulogin{
