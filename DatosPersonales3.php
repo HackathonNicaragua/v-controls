@@ -33,6 +33,9 @@
         <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand" href="ListaExpedientes.php">Expedientes Clinicos</a>
+      <ul class="nav navbar-nav nav-bar-right">
+      	<li><a href="index.php" title="">Cerrar Sesion</a></li>
+      </ul>
 	</div>
   </div><!-- /.container-fluid -->
 </nav>
