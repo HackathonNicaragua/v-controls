@@ -6,11 +6,21 @@ use Illuminate\Hashing\BcryptHasher;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use App\doctores_pacientes;
+use App\Datos_Personales;
 use Illuminate\Database\Eloquent\Model;
  
  
 class doctores_pacientesController extends Controller
 {
+
+    //Select Datos_Personales.* from Datos_Personales,doctores_pacientes,Usuarios where Usuarios.Id_Usuario=doctores_pacientes.Id_Usuario AND Datos_Personales.Numero_Expediente=doctores_pacientes.Numero_Expediente AND doctores_pacientes.Id_Usuario=2;
+     public function listarpacientes(Request $paciente){
+        $doctores_pacientes=Datos_Personales::Select('Datos_Personales.* from Datos_Personales,doctores_pacientes,usuarios where usuarios.Id_Usuario=doctores_pacientes.Id_Usuario AND Datos_Personales.Numero_Expediente=doctores_pacientes.Numero_Expediente AND doctores_pacientes.Id_Usuario',' =' , $paciente->Id_Usuario)->get();
+        //$doctores_pacientes=Datos_Personales::select("Select Datos_Personales.* from Datos_Personales,doctores_pacientes,Usuarios where Usuarios.Id_Usuario=doctores_pacientes.Id_Usuario AND Datos_Personales.Numero_Expediente=doctores_pacientes.Numero_Expediente AND doctores_pacientes.Id_Usuario",'=',$paciente->Id_Usuario,';')->get();
+        return response()->json($doctores_pacientes, 200);
+    }
+
+
 public function create(Request $request)
     {
         //creating a validator

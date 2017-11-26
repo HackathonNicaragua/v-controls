@@ -21,6 +21,8 @@ $router->get('login','UsuariosController@login');
 
 
 $router->post('creardoctorespacientes','doctores_pacientesController@create');
+$router->get('mostrarlistapacientes','listapacientesController@mostrarlistapacientes');
+$router->get('listarpacientesfinal','listapacientesController@listarpacientesfinal');
 
 
 $router->get('createuser', 'userController@create');
@@ -32,6 +34,7 @@ $router->get('buscarpornombre','Datos_personalesController@buscarpornombre');//b
 $router->post('actualizardatospersonales','Datos_PersonalesController@actualizardatospersonales');//actualizar datos personales
 $router->get('eliminarusuario','Datos_personalesController@eliminarusuario');// PRIMERA
 $router->get('mostrarNumeroNombre','Datos_personalesController@mostrarNumeroNombre');
+//$router->get('listarpacientes','Datos_personalesController@listarpacientes');
 
 
 $router->post('createconsulta','ConsultasController@create');//----------->>>>>><SEGUNDA
