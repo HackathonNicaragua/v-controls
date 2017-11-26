@@ -1,19 +1,3 @@
-<?php
-		$n_expe='';
-
-		function callWebService()
-		{
-		  //Direccion del servidor donde se tienn los servicios
-		  return json_decode(file_get_contents('http://172.20.8.146/Hackathon2017/Hackathon2017/public/buscarpornumero'),true);
-		}	
-
-		$n_expe= $_GET['n_exp'];
-		if ($n_expe != null) {
-			echo $n_expe;
-		}
-		
-		?>
-
  <!DOCTYPE html>
  <html>
  <head>
@@ -77,7 +61,7 @@
 		 			<input type="text" name="inss" placeholder="1501002" class="form-control">
 		 		</div>
 
-				<nav aria-label="...">
+				<nav aria-label="..." class="botones">
   					<ul class="pager">
     					<li class="previous disabled"><a href="#"><span aria-hidden="true">&larr;</span> Anterior</a></li>
     					<li class="next"><a href="DatosPersonales2.php">Siguiente <span aria-hidden="true">&rarr;</span></a></li>

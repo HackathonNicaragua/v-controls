@@ -1,25 +1,11 @@
-<?php 
-	$n_expe='';
-
-		function callWebService()
-		{
-		  //Direccion del servidor donde se tienn los servicios
-		  return json_decode(file_get_contents('http://172.20.8.146/Hackathon2017/Hackathon2017/public/buscarpornumero'),true);
-		}	
-
-		$n_expe= $_GET['n_exp'];
-		if ($n_expe != null) {
-			echo $n_expe;
-		} ?>
-
  <!DOCTYPE html>
  <html>
  <head>
  	<meta charset="utf-8">
  	<meta http-equiv="X-UA-Compatible" content="IE=edge">
  	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
- 	<link rel="stylesheet" href="css/bootstrap.min.css">
- 	<link rel="stylesheet" href="css/estiloformu.css">
+ 	<link rel="stylesheet" href="css/bootstrap.min.css?ver?1.0">
+ 	<link rel="stylesheet" href="css/estiloformu.css?ver?1.0">
  	<link rel="stylesheet" type="text/css" href="style.css">
  	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
  	<script type="text/javascript" src="js/controldediseño.js"></script>
@@ -61,7 +47,7 @@
 			 		</div>
 
 
-					<nav aria-label="...">
+					<nav aria-label="..." class="botones">
 	  					<ul class="pager">
 	    					<li class="previous"><a href="DatosPersonales2.php"><span aria-hidden="true">&larr;</span> Anterior</a></li>
 	    					<li class="next"><a onclick="">Guardar <span aria-hidden="true">&rarr;</span></a></li>
