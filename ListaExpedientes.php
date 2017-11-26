@@ -64,7 +64,6 @@ function callWebService()
   return json_decode(file_get_contents('http://192.168.10.8/Hackathon2017/Hackathon2017/public/mostrardatospersonales'),true);
 }
 $pacientes='<div class="container"> <div class="list-group" id="lista"> ';
-$cities='';
 $resul = callWebService();
 foreach($resul as $Expediente)
 {

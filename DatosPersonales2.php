@@ -24,7 +24,7 @@
  	<link rel="stylesheet" type="text/css" href="style.css">
  	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
- 	<script type="text/javascript" src="/js/controldediseño.js" ></script>
+ 	<script type="text/javascript" src="js/controldedisenio.js" ></script>
  	<title>Datos personales2</title>
  </head>
  <body>
@@ -53,10 +53,9 @@
 						<option value="Femenino">Femenino</option>}
 					</select>	
 		 		</div>
-
-		 		<div>
+		 		
 		 			<label for="etnia">Etnia</label>
-		 			<select id="etnia" class="form-control" onchange ="aparecertb(this)">
+		 			<select id="etnia" class="form-control" onchange ="aparecertb()">
 		 				<option value="Mestizos">Mestizos</option>
 		 				<option value="Miskitu">Miskitu</option>
 		 				<option value="Matagalpa">Matagalpa</option>
@@ -70,7 +69,6 @@
 		 				<option value="Rama">Rama</option>
 		 				<option value="Otros">Otros</option>
 		 			</select>
-		 		</div>
 
 		 		<div id="otrosd" style="display:none;">
 		 			<input type="text" placeholder="Etnia" class="form-control">
@@ -111,6 +109,6 @@
 	 	</form>
 	</center>
 
-	
+
  </body>
  </html>
