@@ -3,8 +3,8 @@
 	$data['Nombres']=$_COOKIE['nom'];
 	$data['Apellidos']=$_COOKIE['apell'];
 	$data['Edad']=$_COOKIE['ed'];
-	$data['Numero_Cedula']=$_COOKIE['ced'];
-	$data['Numero_INSS']=$_COOKIE['inss'];
+	$data['numerocedula']=$_COOKIE['ced'];
+	$data['numeroinss']=$_COOKIE['inss'];
 	$data['Sexo']=$_COOKIE['sexo'];
 	$data['Etnias']=$_COOKIE['etni'];
 	$data['Lugar_Nacimiento']=$_COOKIE['nac'];
