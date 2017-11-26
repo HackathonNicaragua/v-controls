@@ -37,16 +37,20 @@
 		 		</div>
 		 		<div>
 		 			<label for="contra">Contraseña</label>
-		 			<input type="text"  name="contra" placeholder="" class="form-control">	
+		 			<input type="password"  name="contra" placeholder="" class="form-control">	
 		 		</div>
-                <div>
+               <div>
 		 			<label for="niveles">Nivel</label>
-		 			<input type="text"  name="niveles" placeholder="" class="form-control">	
+					<select name="niveles" class="form-control">
+						<option value="Registro">Registro</option>}
+						<option value="Doctor">Doctor</option>}
+						<option value="Administrador">Administrador</option>
+					</select>	
 		 		</div>
 		 		
 				<nav aria-label="..." class="botones">
   					<ul class="pager">
-    					<li ><a><input type="submit" class="btn btn-default" value="Siguiente"></a></li>
+    					<li ><a><input type="submit" class="btn btn-default" value="Agregar"></a></li>
   					</ul>
 				</nav>
 			</div>
