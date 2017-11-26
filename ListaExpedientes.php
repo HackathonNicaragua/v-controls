@@ -87,10 +87,10 @@ function callWebService()
 {
   //Direccion del servidor donde se tienn los servicios
   if (strcmp(strtolower($_SESSION['niveles']),strtolower("registro"))==0){
-   return json_decode(file_get_contents('http://192.168.10.8/Hackathon2017/Hackathon2017/public/mostrarlistapacientes?Id_Usuario='.$_SESSION['id']),true);
+   return json_decode(file_get_contents('http://172.20.8.146/Hackathon2017/Hackathon2017/public/mostrarlistapacientes?Id_Usuario='.$_SESSION['id']),true);
 }
 else{
-  return json_decode(file_get_contents('http://192.168.10.8/Hackathon2017/Hackathon2017/public/listarpacientesfinal?Id_Usuario='.$_SESSION['id']),true);
+  return json_decode(file_get_contents('http://172.20.8.146/Hackathon2017/Hackathon2017/public/listarpacientesfinal?Id_Usuario='.$_SESSION['id']),true);
 }
 }
 $pacientes='<div class="container"> <div class="list-group" id="lista"> ';
