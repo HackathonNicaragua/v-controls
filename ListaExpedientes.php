@@ -45,7 +45,7 @@ session_destroy();
         <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand" href="#">Expedientes Clinicos</a>
-    <form class="navbar-form navbar-left" role="search">
+    <form class="navbar-form navbar-left" role="search" action="buscar()">
   <div class="form-group">
     <input type="text" class="form-control" placeholder="buscar">
   </div>
@@ -110,6 +110,8 @@ if (strcmp(strtolower($_SESSION['niveles']),strtolower("doctor"))==0){
 }
 
 }
+
+
 $pacientes='<div class="container"> <div class="list-group" id="lista"> ';
 $resul = callWebService();
 foreach($resul as $Expediente)
