@@ -77,6 +77,16 @@ session_destroy();
         <?php 
         }
         ?>
+       <?php 
+         
+        if (strcmp(strtolower($_SESSION['niveles']),strtolower("administrador"))==0) {
+          # code...?>
+        <li><a href="Nuevousuario.php">Agregar Usuario<span class="glyphicon glyphicon-plus"></span></a></li>
+        </li>
+        <?php 
+        }
+        ?>
+
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

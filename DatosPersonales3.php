@@ -37,6 +37,7 @@
 	 	</div>
 
 		 	<form name="datosper" method="post" action="insertar.php">
+
 		 		<div class="input-group"> 			
 		 		
 			 		<div>
@@ -65,4 +66,12 @@
 		 	</form>
 	</center>
  </body>
+ <?php 
+ $sexo=$_POST['sexo'];
+setcookie('sexo',$sexo,time()+60000000);
+setcookie('etnia',$_POST['etnia'],time()+60000000);
+setcookie('nacimiento',$_POST['nacimiento'],time()+60000000);
+setcookie('religion',$_POST['religion'],time()+60000000);
+
+ ?>
  </html>
