@@ -68,15 +68,9 @@ $cities='';
 $resul = callWebService();
 foreach($resul as $Expediente)
 {
-    $cities .= '<input value='.$Expediente['Numero_Expediente'].'></input>'; 
-    $cities .= '<input value='.$Expediente['Nombres'].'></input>';   
-    $pacientes.='<a href="DatosPersonales.php/?num=" class="list-group-item " >';
+    $pacientes.='<a href="DatosPersonales.php?n_exp='.$Expediente['Numero_Expediente']. '" class="list-group-item " >';
     $pacientes.='<h4 id="paciente1" class="list-group-item-heading">'.$Expediente['Nombres'].' '.$Expediente['Apellidos'].'</h4>';
-<<<<<<< HEAD
     $pacientes.='<p class="list-group-item-text">'.$Expediente['Numero_Expediente'].'</p>';
-=======
-    $pacientes.='<p class="list-group-item-text" onclik=""> Numero de Expediente'.$Expediente['Numero_Expediente'].'</p>';
->>>>>>> b89a57638d5233296ddaa04f40370464f410b869
     $pacientes.='</a>';
 }
 $pacientes.='<div/><div/>';
