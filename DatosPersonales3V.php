@@ -16,7 +16,6 @@
 	 <center>
 
 	 <?php 
-			$n_expe='';
 			function callWebService()
 			{
 			  //Direccion del servidor donde se tienn los servicios

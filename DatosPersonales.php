@@ -32,32 +32,32 @@
 	 		
 		 		<div>
 		 			<label for="n_expe">Numero de Expediente</label>
-		 			<input type="text" pattern="[0-9]*" name="n_expe" placeholder="001" class="form-control">	
+		 			<input type="text" pattern="[0-9]*" name="n_expe" class="form-control">	
 		 		</div>
 
 		 		<div>
 		 			<label for="nombres">Nombres</label>
-		 			<input type="text" name="nombres" placeholder="Erick Alejandro" class="form-control">
+		 			<input type="text" name="nombres" class="form-control">
 		 		</div>
 
 		 		<div>
 		 			<label for="apellidos">Apellidos</label>
-		 			<input type="text" name="apellidos" placeholder="Ruiz Mejia" class="form-control">
+		 			<input type="text" name="apellidos" class="form-control">
 		 		</div>
 
 		 		<div>
 		 			<label for="edad">Edad</label>
-		 			<input type="number" name="edad" placeholder="24" class="form-control">
+		 			<input type="number" name="edad" class="form-control">
 		 		</div>
 
 		 		<div>
 		 			<label for="cedula">Numero de Cedula</label>
-		 			<input type="text" name="nombres" placeholder="281-141186-0001P" class="form-control">
+		 			<input type="text" name="cedula" class="form-control">
 		 		</div>
 
 		 		<div>
 		 			<label for="inss">Numero de INSS</label>
-		 			<input type="text" name="inss" placeholder="1501002" class="form-control">
+		 			<input type="text" name="inss" class="form-control">
 		 		</div>
 
 				<nav aria-label="..." class="botones">
