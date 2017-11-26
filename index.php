@@ -15,7 +15,7 @@
 	<div class="container" id="formulogin" >
 
 		<center>
-			<img class="media-object" src="img/prueba.png" alt="" height="200px">
+			<img class="media-object" src="img/logo.png" alt="" height="200px">
 			<br/>
 			<br/>
 		<div class="input-group">
