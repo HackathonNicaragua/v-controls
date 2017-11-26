@@ -22,7 +22,20 @@
  		setcookie('inss',$_POST['inss'],time()+2220);
  	 ?>
 	 <center>
-
+		<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="ListaExpedientes.php">Expedientes Clinicos</a>
+	</div>
+  </div><!-- /.container-fluid -->
+</nav>
 	 	<div id="navs">
 	 		<ul class="nav nav-tabs nav-justified">
 			  <li role="presentation" class="active"><a href="DatosPersonales.php">Datos Personales</a></li>

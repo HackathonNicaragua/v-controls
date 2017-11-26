@@ -15,7 +15,6 @@
 <body>
 	
  <center>
-
 	 	<div id="navs">
 	 		<ul class="nav nav-tabs nav-justified">
 			  <li role="presentation" class="active"><a href="ListaExpedientes.php">Regresar</a></li>

@@ -44,7 +44,7 @@ session_destroy();
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Expedientes Clinicos</a>
+      <a class="navbar-brand" href="ListaExpedientes.php">Expedientes Clinicos</a>
     <form class="navbar-form navbar-left" role="search">
   <div class="form-group">
     <input type="text" class="form-control" placeholder="buscar">
