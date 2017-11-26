@@ -13,6 +13,10 @@
  	<title>Datos personales2</title>
  </head>
  <body>
+ 	<?php 
+ 		setcookie('n_exo',$_POST['n_expe'],time()+2220);
+
+ 	 ?>
 	 <center>
 
 	 	<div id="navs">
@@ -28,7 +32,7 @@
 			</ul>
 	 	</div>
 	 	
-	 	<form name="datosper" method="post" action="">
+	 	<form name="datosper" method="post" action="DatosPersonales3.php">
 	 		<div class="input-group"> 			
 	 	
 	 	 		<div>
@@ -61,7 +65,7 @@
 
 				<div>
 					<label for="nacimiento">Lugar de Nacimiento</label>
-					<input type="text" name="nacimiento" class="form-control">
+					<input type="text" name="nacimiento" placeholder="Leon" class="form-control">
 				</div>
 
 				<div>
@@ -86,8 +90,8 @@
 
 				<nav aria-label="..." class="botones">
   					<ul class="pager">
-    					<li class="previous"><a href="DatosPersonales.php"><span aria-hidden="true">&larr;</span> Anterior</a></li>
-    					<li class="next"><a href="DatosPersonales3.php">Siguiente <span aria-hidden="true">&rarr;</span></a></li>
+    					<li ><a href="DatosPersonalesa.php"><button type="button" class="btn btn-default">Anterior</button></a></li>
+    					<li ><a><input type="submit" class="btn btn-default" value="Siguiente"></a></li>
   					</ul>
 				</nav>
 			</div>
