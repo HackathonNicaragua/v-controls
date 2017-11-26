@@ -15,9 +15,9 @@
 	<div class="container" id="formulogin">
 
 		<center>
-            <h2 class="lable label-default">Medical technology</h2>
-			<img class="media-object" src="img/prueba.jpg" alt="">
-			
+			<img class="media-object" src="img/prueba.png" alt="" height="200px">
+			<br/>
+			<br/>
 		<div class="input-group">
 			<form action="login" method="post" accept-charset="utf-8">
 				
