@@ -1,5 +1,23 @@
 <?php
-// Función para llamar al webservice y devolver el resultado en un array
+session_start();?>
+<?php  
+if (isset($_SESSION['loggedin'])) {
+
+}
+else
+{
+echo "Esta pagina es solo para usuarios registrados.<br>";
+echo "<br><a href='index.php'>Login</a>";
+exit;
+}
+$now = time();
+$aviso="Su sesion ah expirado";
+if($now > $_SESSION['expire']) {
+session_destroy();
+ echo "<script> alert ('".$aviso."') </script>"; 
+ header('Location: index.php');
+
+}
 
 ?>
 
@@ -10,7 +28,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Medical technology</title>
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/bootstrap.min.css?ver?1.0">
 <link rel="stylesheet" href="style.css">
 	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
@@ -50,8 +68,15 @@
       </ul>
       
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Nuevo Ingreso <span class="glyphicon glyphicon-plus"></span></a></li>
+        <?php 
+         
+        if (strcmp(strtolower($_SESSION['niveles']),strtolower("registro"))==0) {
+          # code...?>
+        <li><a href="DatosPersonales.php">Nuevo Ingreso <span class="glyphicon glyphicon-plus"></span></a></li>
         </li>
+        <?php 
+        }
+        ?>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
@@ -61,7 +86,12 @@
 function callWebService()
 {
   //Direccion del servidor donde se tienn los servicios
-  return json_decode(file_get_contents('http://192.168.10.8/Hackathon2017/Hackathon2017/public/mostrardatospersonales'),true);
+  if (strcmp(strtolower($_SESSION['niveles']),strtolower("registro"))==0){
+   return json_decode(file_get_contents('http://192.168.10.8/Hackathon2017/Hackathon2017/public/mostrarlistapacientes?Id_Usuario='.$_SESSION['id']),true);
+}
+else{
+  return json_decode(file_get_contents('http://192.168.10.8/Hackathon2017/Hackathon2017/public/listarpacientesfinal?Id_Usuario='.$_SESSION['id']),true);
+}
 }
 $pacientes='<div class="container"> <div class="list-group" id="lista"> ';
 $resul = callWebService();

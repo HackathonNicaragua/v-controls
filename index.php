@@ -1,3 +1,9 @@
+<?php 
+if (isset($_SESSION['loggedin'])) {
+session_start();
+session_destroy();
+}
+ ?>
 <!DOCTYPE html>
 <html>
 <head>
