@@ -61,14 +61,13 @@
 function callWebService()
 {
   //Direccion del servidor donde se tienn los servicios
-  return json_decode(file_get_contents('http://172.20.8.146/Hackathon2017/Hackathon2017/public/mostrardatospersonales'),true);
+  return json_decode(file_get_contents('http://192.168.10.8/Hackathon2017/Hackathon2017/public/mostrardatospersonales'),true);
 }
 $pacientes='<div class="container"> <div class="list-group" id="lista"> ';
-$cities='';
 $resul = callWebService();
 foreach($resul as $Expediente)
 {
-    $pacientes.='<a href="DatosPersonales.php?n_exp='.$Expediente['Numero_Expediente']. '" class="list-group-item " >';
+    $pacientes.='<a href="DatosPersonalesV.php?n_exp='.$Expediente['Numero_Expediente']. '" class="list-group-item " >';
     $pacientes.='<h4 id="paciente1" class="list-group-item-heading">'.$Expediente['Nombres'].' '.$Expediente['Apellidos'].'</h4>';
     $pacientes.='<p class="list-group-item-text">'.$Expediente['Numero_Expediente'].'</p>';
     $pacientes.='</a>';
