@@ -15,6 +15,11 @@
  <body>
  	<?php 
 			setcookie('sexo',$_POST['sexo'],time()+1000);
+			setcookie('etni',$_POST['etnia'],time()+2220);
+			setcookie('nac',$_POST['nacimiento'],time()+2220);
+			setcookie('relig',$_POST['religion'],time()+2220);
+			setcookie('escol',$_POST['escol'],time()+2220);
+			setcookie('prof',$_POST['profesion'],time()+2220);
 		?>
 	 <center>
 
@@ -37,17 +42,17 @@
 		 		
 			 		<div>
 			 			<label for="direccion">Direccion</label>
-			 			<input type="text" name="direccion" placeholder="Avenida Rios calle 3" class="form-control">	
+			 			<input type="text" name="direccion" class="form-control">	
 			 		</div>
 
 			 		<div>
 			 			<label for="npadre">Nombre del Padre</label>
-			 			<input type="text" pattern="[A-Za-z]" name="npadre" placeholder="Jose Avendaño" class="form-control">
+			 			<input type="text" name="npadre" class="form-control">
 			 		</div>
 
 			 		<div>
 			 			<label for="nmadre">Nombre de la madre</label>
-			 			<input type="text" pattern="[A-Za-z]" name="apellidos" placeholder="Isabel Medina" class="form-control">
+			 			<input type="text" name="nmadre" class="form-control">
 			 		</div>
 
 

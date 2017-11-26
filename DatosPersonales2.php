@@ -15,7 +15,11 @@
  <body>
  	<?php 
  		setcookie('n_exo',$_POST['n_expe'],time()+2220);
-
+ 		setcookie('nom',$_POST['nombres'],time()+2220);
+ 		setcookie('apell',$_POST['apellidos'],time()+2220);
+ 		setcookie('ed',$_POST['edad'],time()+2220);
+ 		setcookie('ced',$_POST['cedula'],time()+2220);
+ 		setcookie('inss',$_POST['inss'],time()+2220);
  	 ?>
 	 <center>
 
@@ -44,7 +48,7 @@
 		 		</div>
 		 		
 		 			<label for="etnia">Etnia</label>
-		 			<select id="etnia" class="form-control" onchange ="aparecertb()">
+		 			<select name="etnia" class="form-control" >
 		 				<option value="Mestizos">Mestizos</option>
 		 				<option value="Miskitu">Miskitu</option>
 		 				<option value="Matagalpa">Matagalpa</option>
@@ -59,18 +63,16 @@
 		 				<option value="Otros">Otros</option>
 		 			</select>
 
-		 		<div id="otrosd" style="display:none;">
-		 			<input type="text" placeholder="Etnia" class="form-control">
 		 		</div>
 
 				<div>
 					<label for="nacimiento">Lugar de Nacimiento</label>
-					<input type="text" name="nacimiento" placeholder="Leon" class="form-control">
+					<input type="text" name="nacimiento" class="form-control">
 				</div>
 
 				<div>
 		 			<label for="religion">Religion</label>
-		 			<input type="text" name="religion" placeholder="Catolico" class="form-control">
+		 			<input type="text" name="religion" class="form-control">
 		 		</div>
 
 				<div>
@@ -85,7 +87,7 @@
 				
 				<div>
 		 			<label for="profesion">Profesion</label>
-		 			<input type="text" name="profesion" placeholder="Obreoro" class="form-control">
+		 			<input type="text" name="profesion" class="form-control">
 		 		</div>
 
 				<nav aria-label="..." class="botones">
