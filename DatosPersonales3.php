@@ -13,6 +13,9 @@
  	<title>Datos personales3</title>
  </head>
  <body>
+ 	<?php 
+			setcookie('sexo',$_POST['sexo'],time()+1000);
+		?>
 	 <center>
 
 	 	<div id="navs">
@@ -27,17 +30,24 @@
 				<li role="presentation" class="active"><a href="DatosPersonales3.php">DatosPersonales3</a></li>
 			</ul>
 	 	</div>
-<?php 
-setcookie('sexo',$_POST['sexo'],time()+60000000);
-setcookie('etnia',$_POST['etnia'],time()+60000000);
-setcookie('nacimiento',$_POST['nacimiento'],time()+60000000);
-setcookie('religion',$_POST['religion'],time()+60000000);
 
-?>
-		 	<form name="datosper" method="post" action="">
-	 		<div class="input-group"> 			
+		 	<form name="datosper" method="post" action="insertar.php">
+		 		<div class="input-group"> 			
 		 		
-			 		
+			 		<div>
+			 			<label for="direccion">Direccion</label>
+			 			<input type="text" name="direccion" placeholder="Avenida Rios calle 3" class="form-control">	
+			 		</div>
+
+			 		<div>
+			 			<label for="npadre">Nombre del Padre</label>
+			 			<input type="text" pattern="[A-Za-z]" name="npadre" placeholder="Jose Avendaño" class="form-control">
+			 		</div>
+
+			 		<div>
+			 			<label for="nmadre">Nombre de la madre</label>
+			 			<input type="text" pattern="[A-Za-z]" name="apellidos" placeholder="Isabel Medina" class="form-control">
+			 		</div>
 
 
 					<nav aria-label="..." class="botones">
