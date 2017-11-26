@@ -13,6 +13,8 @@ use Illuminate\Database\Eloquent\Model;
 class Datos_personalesController extends Controller
 {
 
+
+
     public function mostrar(){
         $datos_personales= Datos_personales::all();
         return response()->json($datos_personales, 200);

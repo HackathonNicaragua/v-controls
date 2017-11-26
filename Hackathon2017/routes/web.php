@@ -15,6 +15,16 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
+$router->get('mostrarUsuarios','UsuariosController@mostrarUsuarios');
+$router->post('crearUsuario','UsuariosController@create');
+$router->get('login','UsuariosController@login');
+
+
+$router->post('creardoctorespacientes','doctores_pacientesController@create');
+$router->get('mostrarlistapacientes','listapacientesController@mostrarlistapacientes');
+$router->get('listarpacientesfinal','listapacientesController@listarpacientesfinal');
+
+
 $router->get('createuser', 'userController@create');
 
 $router->post('createdatospersonales','Datos_personalesController@create'); //Crear un dato
@@ -24,6 +34,7 @@ $router->get('buscarpornombre','Datos_personalesController@buscarpornombre');//b
 $router->post('actualizardatospersonales','Datos_PersonalesController@actualizardatospersonales');//actualizar datos personales
 $router->get('eliminarusuario','Datos_personalesController@eliminarusuario');// PRIMERA
 $router->get('mostrarNumeroNombre','Datos_personalesController@mostrarNumeroNombre');
+//$router->get('listarpacientes','Datos_personalesController@listarpacientes');
 
 
 $router->post('createconsulta','ConsultasController@create');//----------->>>>>><SEGUNDA
@@ -38,7 +49,7 @@ $router->delete('eliminarSegunda','ConsultasController@eliminarSegunda2');
 $router->post('createexamenfisico','Examen_fisicoController@create');//----------->>>>>>>>>>>>>>>>>-----------TERCERA
 $router->get('mostrarexamenesfisicos','Examen_fisicoController@mostrarexamenesfisicos');
 $router->get('buscarexamenesfisicosid','Examen_fisicoController@buscarexamenesfisicosid');
-$router->get('buscarpornumeroexpediente','Examen_fisicoController@buscarpornumeroexpediente');
+$router->get('buscarpornumeroexpedientefisicos','Examen_fisicoController@buscarpornumeroexpedientefisicos');
 $router->post('actualizartercera','Examen_fisicoController@actualizartercera');
 $router->get('eliminartercera','Examen_fisicoController@eliminartercera');
 
@@ -56,7 +67,7 @@ $router->get('eliminarCuarta','Fisico_cabeza_cuellosController@eliminarCuarta');
 $router->post('createfisico_genitourinarios','Fisico_genitourinariosController@create');//------------>>>>>>>>>>>>>>>>>>>>>>>>>> QUINTA
 $router->get('mostrarFisico_genitourinarios','Fisico_genitourinariosController@mostrarFisico_genitourinarios');
 $router->get('buscarporId_Genitourinario','Fisico_genitourinariosController@buscarporId_Genitourinario');
-$router->get('buscarporCodigoGenitourinario','Fisico_genitourinariosController@buscarporCodigoGenitourinario');
+$router->get('buscarporCodigoGenitourinario','Fisico_genitourinariosController@buscarporCodigoGenitourinarios');
 $router->post('actualizarquinta','Fisico_genitourinariosController@actualizarquinta');
 $router->get('eliminarquinta','Fisico_genitourinariosController@buscarporCodigoGenitourinario');
 
@@ -118,7 +129,7 @@ $router->post('actualizardecimaprimera','Antecedentes_fam_patologicosController@
 $router->post('createantecedentes_gineco_obstetricos','Antecedentes_gineco_obstetricosController@create');//-------------->>>>>>>>>>>>>>>>>>>>>>DECIM SEGUNDA
 $router->get('createmostrarginecoObstetrico','Antecedentes_gineco_obstetricosController@mostrarantecedentes_gineco_obstetricos');
 $router->get('buscarporId_Gineco_Obstetrico','Antecedentes_gineco_obstetricosController@buscarporIdGinecoObstetrico');
-$router->get('buscarpornumeroexpediente','Antecedentes_gineco_obstetricosController@buscarponumeroexpediente');
+$router->get('buscarpornumeroexpedienteGineco','Antecedentes_gineco_obstetricosController@buscarponumeroexpediente');
 $router->post('actualizarDecimePrimera','Antecedentes_gineco_obstetricosController@actualizarDecimePrimera');
 $router->get('eliminarDecimaPrimera','Antecedentes_gineco_obstetricosController@eliminarDecimaPrimera');
 
