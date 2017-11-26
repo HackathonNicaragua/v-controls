@@ -12,6 +12,13 @@ use Illuminate\Database\Eloquent\Model;
  
 class UsuariosController extends Controller
 {
+
+    public function login(Request $usuario, Request $contraseña)
+    {
+        $Usuarios = Usuarios::where('Nombre_Usuario','=',$usuario->Nombre_Usuario,'AND', 'Contraseña','=',$contraseña->Contraseña)->get();
+        return response()->json($Usuarios, 200);
+    }
+
 	 public function mostrarUsuarios(){
         $Usuarios= Usuarios::all();
         return response()->json($Usuarios, 200);
