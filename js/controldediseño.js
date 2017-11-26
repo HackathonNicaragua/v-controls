@@ -2,12 +2,12 @@
 function aparecertb (sel) {
 	if (sel.value == "Otros")
 	{
-		var tb = document.getElementsByName("otrosd");
-		tb.style.display = '';
+		var tb = document.getElementsById("otrosd");
+		tb.style.display = " ";
 	}
 	else
 	{
-		var tb = document.getElementsByName("otrosd");
+		var tb = document.getElementsById("otrosd");
 		tb.style.display = "none";
 	}
 }
