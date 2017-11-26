@@ -69,7 +69,7 @@ foreach($resul as $Expediente)
 {
     $pacientes.='<a href="DatosPersonales.php/?n_exp='.$Expediente['Numero_Expediente'].'" class="list-group-item " >';
     $pacientes.='<h4 id="paciente1" class="list-group-item-heading">'.$Expediente['Nombres'].' '.$Expediente['Apellidos'].'</h4>';
-    $pacientes.='<p class="list-group-item-text" onclik="">'.$Expediente['Numero_Expediente'].'</p>';
+    $pacientes.='<p class="list-group-item-text" onclik=""> Numero de Expediente'.$Expediente['Numero_Expediente'].'</p>';
     $pacientes.='</a>';
 }
 $pacientes.='<div/><div/>';
