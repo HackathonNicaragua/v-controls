@@ -19,7 +19,7 @@
 			<br/>
 			<br/>
 		<div class="input-group">
-			<form action="login" method="post" accept-charset="utf-8">
+			<form action="fun_login.php" method="post" accept-charset="utf-8">
 				
 			<input type="text" name="usuario" value="" placeholder="Usuario" class="form-control">
 			<br/>
